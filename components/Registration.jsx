@@ -49,6 +49,7 @@ const Registration = () => {
         });
       });
       reset();
+
       // const result = await signIn("credentials", {
       //   redirect: false,
       //   email,
@@ -149,35 +150,49 @@ const Registration = () => {
         </div>
         <div className="flex flex-row justify-start items-center gap-4 mb-1">
           <div class="flex items-center">
-            <input
-              checked
-              id="default-radio-2"
-              type="radio"
-              value="user"
-              name="uType"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-radio-2"
-              className="ml-2 text-sm font-medium text-gray-500"
-            >
-              Visitor
-            </label>
+            <div>
+              <input
+                checked
+                type="radio"
+                value="user"
+                id="uType"
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                {...register("uType", {
+                  required: "Please enter password",
+                })}
+              />
+              <label
+                for="default-radio-2"
+                className="ml-2 text-sm font-medium text-gray-500"
+              >
+                Visitor
+              </label>
+            </div>
+            {errors.uType && (
+              <div className="text-red-500 ">{errors.uType.message}</div>
+            )}
           </div>
           <div className="flex items-center">
-            <input
-              id="default-radio-1"
-              type="radio"
-              value="nurse"
-              name="uType"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-radio-1"
-              className="ml-2 text-sm font-medium text-gray-500"
-            >
-              Nurse
-            </label>
+            <div>
+              <input
+                id="default-radio-1"
+                type="radio"
+                value="nurse"
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                {...register("uType", {
+                  required: "Please select option",
+                })}
+              />
+              <label
+                for="default-radio-1"
+                className="ml-2 text-sm font-medium text-gray-500"
+              >
+                Nurse
+              </label>
+            </div>
+            {errors.uType && (
+              <div className="text-red-500 ">{errors.uType.message}</div>
+            )}
           </div>
         </div>
         <div>

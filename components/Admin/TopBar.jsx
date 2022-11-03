@@ -8,6 +8,9 @@ import {
   faArrowRight,
   faCalendarAlt,
   faChevronDown,
+  faHandHoldingMedical,
+  faTachometerAlt,
+  faPills,
 } from "@fortawesome/free-solid-svg-icons";
 import Logout from "../Logout";
 import Profile from "../../assets/images/profile.png";
@@ -15,6 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ViewMessages from "../Popups/Messages";
 import ViewNotification from "../Popups/Notification";
+import { Tooltip } from "@material-tailwind/react";
 
 const TopBar = ({
   showMobileSidebar,
@@ -37,12 +41,19 @@ const TopBar = ({
           }
         >
           {showSidebar ? (
-            <FontAwesomeIcon icon={faBars} className="text-2xl text-gray-800" />
+            <Tooltip content="Minimize">
+              <FontAwesomeIcon
+                icon={faBars}
+                className="text-2xl text-gray-800"
+              />
+            </Tooltip>
           ) : (
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              className="text-2xl text-gray-800"
-            />
+            <Tooltip content="Expand">
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="text-2xl text-gray-800"
+              />
+            </Tooltip>
           )}
         </div>
         <div
@@ -72,39 +83,45 @@ const TopBar = ({
         {userType === "admin" ? (
           <ul className="flex justify-between items-center gap-4 ">
             <Link href="/admin/appointment">
-              <li className="cursor-pointer">
-                <a className="relative flex items-center ">
+              <Tooltip content="Appointments">
+                <li className="cursor-pointer">
+                  <a className="relative flex items-center ">
+                    <FontAwesomeIcon
+                      icon={faCalendarAlt}
+                      className=" text-xl text-gray-800 hover:text-teal-500"
+                    />
+                    <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-red-600"></p>
+                  </a>
+                </li>
+              </Tooltip>
+            </Link>
+            <li className="cursor-pointer">
+              <Tooltip content="Messages">
+                <a
+                  onClick={() => setIsMsgModal(true)}
+                  className="relative flex items-center "
+                >
                   <FontAwesomeIcon
-                    icon={faCalendarAlt}
+                    icon={faComments}
                     className=" text-xl text-gray-800 hover:text-teal-500"
                   />
                   <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-red-600"></p>
                 </a>
-              </li>
-            </Link>
-            <li className="cursor-pointer">
-              <a
-                onClick={() => setIsMsgModal(true)}
-                className="relative flex items-center "
-              >
-                <FontAwesomeIcon
-                  icon={faComments}
-                  className=" text-xl text-gray-800 hover:text-teal-500"
-                />
-                <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-red-600"></p>
-              </a>
+              </Tooltip>
             </li>
             <li className="cursor-pointer">
-              <a
-                onClick={() => setIsNoteModal(true)}
-                className="relative flex items-center "
-              >
-                <FontAwesomeIcon
-                  icon={faBell}
-                  className=" text-xl text-gray-800 hover:text-teal-500"
-                />
-                <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-red-600"></p>
-              </a>
+              <Tooltip content="Notifications">
+                <a
+                  onClick={() => setIsNoteModal(true)}
+                  className="relative flex items-center "
+                >
+                  <FontAwesomeIcon
+                    icon={faBell}
+                    className=" text-xl text-gray-800 hover:text-teal-500"
+                  />
+                  <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-red-600"></p>
+                </a>
+              </Tooltip>
             </li>
           </ul>
         ) : (

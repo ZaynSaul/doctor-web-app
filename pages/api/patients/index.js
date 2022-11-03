@@ -39,7 +39,7 @@ export default async function handler(req, res) {
 
   if (method === "GET") {
     try {
-      const patients = await Patient.find().sort({ name: 1 });
+      const patients = await Patient.find().sort();
       res.status(200).json(patients);
     } catch (err) {
       res.status(500).json(err);

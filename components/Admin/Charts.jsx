@@ -8,7 +8,7 @@ import DoughnutChart from "../Charts/Doughnut";
 const Charts = () => {
   return (
     <div className="flex gap-10 flex-col  justify-between md:flex-row">
-      <div className="w-full bg-white text-gray-500 rounded-xl shadow-md p-4 cursor-pointer hover:scale-105 ease-in duration-300">
+      <div className="w-full bg-white text-gray-500 rounded-xl shadow-md p-4 cursor-pointer">
         <div className="flex justify-between flex-row">
           <p className="font-semibold text-md md:text-xl">Patient updates</p>
           <div className="flex items-center gap-4">
@@ -30,8 +30,8 @@ const Charts = () => {
           <div className="border-r-0 border-gray-400 m-1 pr-0 md:pr-4 md:border-r md:m-4">
             <div>
               <p>
-                <span className="text-md font-semibold md:text-2xl">23k </span>
-                <span className="p-1 hover:drop-shadow-xl rounded-full cursor-pointer text-white bg-teal-500">
+                <span className="text-md font-semibold md:text-xl">23k </span>
+                <span className="text-sm p-1 hover:drop-shadow-xl rounded-full cursor-pointer text-white bg-teal-500">
                   28%
                 </span>
               </p>
@@ -39,8 +39,8 @@ const Charts = () => {
             </div>
             <div>
               <p>
-                <span className="text-md font-semibold md:text-2xl">20k </span>
-                <span className="p-1 hover:drop-shadow-xl rounded-full cursor-pointer text-white bg-red-500">
+                <span className="text-md font-semibold md:text-xl">20k </span>
+                <span className="text-sm p-1 hover:drop-shadow-xl rounded-full cursor-pointer text-white bg-red-500">
                   32%
                 </span>
               </p>
@@ -56,7 +56,7 @@ const Charts = () => {
               </button>
             </div>
           </div>
-          <div className="m-1 md:m-4">
+          <div className="m-1 md:m-2">
             <div className="mt-2 md:mt-3">
               <BarChart />
             </div>
@@ -65,6 +65,9 @@ const Charts = () => {
       </div>
       <div className="flex flex-col gap-6 justify-center ">
         <div className="w-full md:h-[300px] md:w-[220px] text-xs border border-gray-100 bg-white rounded-md shadow-md cursor-pointer hover:scale-105 ease-in duration-300">
+          <h3 className="text-md text-center text-gray-800 font-nunito font-medium mt-4">
+            Overall Patient Satisfaction
+          </h3>
           <DoughnutChart />
         </div>
         <div className="flex justify-center items-center w-full h-[200px] md:w-[220px] md:h-[150px] text-sm mt-4 border border-gray-100 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md shadow-lg cursor-pointer hover:scale-105 ease-in duration-300">

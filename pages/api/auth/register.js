@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return;
   }
-  const { name, email, password } = req.body;
+  const { name, email, password, uType } = req.body;
   if (
     !name ||
     !email ||
@@ -20,6 +20,7 @@ export default async function handler(req, res) {
     });
     return;
   }
+
   await db.dbCon();
   const userExist = await User.findOne({ email: email });
   if (userExist) {
@@ -31,16 +32,19 @@ export default async function handler(req, res) {
     name,
     email,
     password: bcryptjs.hashSync(password),
-    isAdmin: false,
+    uType,
+    status: 0,
   });
 
   const user = await newUser.save();
+
   await db.disconnect();
   res.status(201).send({
     message: "Created user!",
     _id: user._id,
     name: user.name,
     email: user.email,
-    isAdmin: user.isAdmin,
+    uType: user.uType,
+    status: user.status,
   });
 }

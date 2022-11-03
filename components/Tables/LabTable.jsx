@@ -31,7 +31,7 @@ const LabTable = ({ labLists }) => {
   return (
     <div className="w-full bg-white overflow-x-auto relative shadow-sm border border-gray-100 mt-6 sm:rounded-lg">
       <div className="w-full flex fel-row items-center justify-between p-2">
-        <h3 className="text-gray-500">Users Table</h3>
+        <h3 className="text-gray-500">Laboratory Table</h3>
         <div className="w-[300px] h-[40px] flex flex-row items-center gap-4 border border-gray-300 rounded-md">
           <a className="cursor-pointer">
             <FontAwesomeIcon

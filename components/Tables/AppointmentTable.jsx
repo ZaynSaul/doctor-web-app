@@ -13,6 +13,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Delete from "../Popups/Delete";
 import ViewAppointment from "../Popups/ViewAppointment";
+import { Tooltip } from "@material-tailwind/react";
 
 const AppointmentTable = ({ appLists }) => {
   const [appData, setAppLists] = useState(appLists);
@@ -178,24 +179,33 @@ const AppointmentTable = ({ appLists }) => {
                   )}
                 </td>
                 <td className="py-4 px-6 flex justify-start items-center gap-2">
-                  <a
-                    onClick={() => handleStatus(a._id)}
-                    className="font-medium text-blue-600 cursor-pointer hover:scale-105 ease-in duration-300"
-                  >
-                    <FontAwesomeIcon icon={faCheckCircle} className="text-xl" />
-                  </a>
-                  <a
-                    onClick={() => handleViewAppointment(a._id)}
-                    className="font-medium text-gray-500 cursor-pointer hover:scale-105 ease-in duration-300"
-                  >
-                    <FontAwesomeIcon icon={faEye} className="text-xl" />
-                  </a>
-                  <a
-                    onClick={() => handleDelete(a._id)}
-                    className="font-medium cursor-pointer text-red-600 hover:underline"
-                  >
-                    <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
-                  </a>
+                  <Tooltip content="Status">
+                    <a
+                      onClick={() => handleStatus(a._id)}
+                      className="font-medium text-blue-600 cursor-pointer hover:scale-105 ease-in duration-300"
+                    >
+                      <FontAwesomeIcon
+                        icon={faCheckCircle}
+                        className="text-xl"
+                      />
+                    </a>
+                  </Tooltip>
+                  <Tooltip content="View">
+                    <a
+                      onClick={() => handleViewAppointment(a._id)}
+                      className="font-medium text-gray-500 cursor-pointer hover:scale-105 ease-in duration-300"
+                    >
+                      <FontAwesomeIcon icon={faEye} className="text-xl" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip content="Delete">
+                    <a
+                      onClick={() => handleDelete(a._id)}
+                      className="font-medium cursor-pointer text-red-600 hover:underline"
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
+                    </a>
+                  </Tooltip>
                 </td>
               </tr>
             ))}

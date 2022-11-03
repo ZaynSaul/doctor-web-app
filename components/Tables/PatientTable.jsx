@@ -18,8 +18,9 @@ import AddPatient from "../Popups/AddPatient";
 import Edit from "../Popups/EditPatient";
 import ViewPatient from "../Popups/ViewPatient";
 import Pagination from "../Pagination";
+import { Tooltip } from "@material-tailwind/react";
 
-const PatientTable = ({ patientLists }) => {
+const PatientTable = ({ paginate, postPerPage, totalPosts, patientLists }) => {
   const [patientData, setPatientLists] = useState(patientLists);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -130,15 +131,17 @@ const PatientTable = ({ patientLists }) => {
             placeholder="search"
           />
         </div>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="w-[100px] h-[40px] bg-green-500 text-white flex justify-center items-center rounded-md p-2"
-          type="button"
-          data-modal-toggle="defaultModal"
-        >
-          <FontAwesomeIcon icon={faAdd} />
-          Add
-        </button>
+        <Tooltip content="Add">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="w-[100px] h-[40px] bg-green-500 text-white flex justify-center items-center rounded-md p-2"
+            type="button"
+            data-modal-toggle="defaultModal"
+          >
+            <FontAwesomeIcon icon={faAdd} />
+            Add
+          </button>
+        </Tooltip>
       </div>
       <table className="w-full h-1/2 text-sm text-left text-gray-500">
         <thead className="text-xs  uppercase bg-gray-50  dark:text-gray-400">
@@ -175,9 +178,6 @@ const PatientTable = ({ patientLists }) => {
             </th>
             <th scope="col" className="py-3 px-6">
               Recovered
-            </th>
-            <th scope="col" className="py-3 px-6">
-              Status
             </th>
             <th scope="col" className="py-3 px-6">
               Action
@@ -227,39 +227,54 @@ const PatientTable = ({ patientLists }) => {
                     />
                   )}
                 </td>
-                <td className="">
-                  <button
-                    onClick={() => handleStatus(pa._id)}
-                    className="bg-blue-400 text-white rounded-md p-2 hover:scale-105 ease-in duration-300"
-                  >
-                    status
-                  </button>
-                </td>
-                <td className=" text-center space-x-2">
-                  <a
-                    onClick={() => handleUpdate(pa._id)}
-                    className="font-medium text-blue-600 cursor-pointer hover:scale-105 ease-in duration-300"
-                  >
-                    <FontAwesomeIcon icon={faEdit} className="text-xl" />
-                  </a>
-                  <a
-                    onClick={() => handleView(pa._id)}
-                    className="font-medium text-gray-600 cursor-pointer hover:scale-105 ease-in duration-300"
-                  >
-                    <FontAwesomeIcon icon={faEye} className="text-xl" />
-                  </a>
-                  <a
-                    onClick={() => handleDelete(pa._id)}
-                    className="font-medium cursor-pointer text-red-600 hover:scale-105 ease-in duration-300"
-                  >
-                    <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
-                  </a>
+
+                <td className=" flex justify-center items-center gap-2   text-center py-2 px-2">
+                  <Tooltip content="Update Status">
+                    <a
+                      onClick={() => handleStatus(pa._id)}
+                      className="font-medium text-blue-600 cursor-pointer hover:scale-105 ease-in duration-300"
+                    >
+                      <FontAwesomeIcon
+                        icon={faCheckCircle}
+                        className="text-md"
+                      />
+                    </a>
+                  </Tooltip>
+                  <Tooltip content="Edit">
+                    <a
+                      onClick={() => handleUpdate(pa._id)}
+                      className="font-medium text-blue-600 cursor-pointer hover:scale-105 ease-in duration-300"
+                    >
+                      <FontAwesomeIcon icon={faEdit} className="text-md" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip content="View">
+                    <a
+                      onClick={() => handleView(pa._id)}
+                      className="font-medium text-gray-600 cursor-pointer hover:scale-105 ease-in duration-300"
+                    >
+                      <FontAwesomeIcon icon={faEye} className="text-md" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip content="Delete">
+                    <a
+                      onClick={() => handleDelete(pa._id)}
+                      className="font-medium cursor-pointer text-red-600 hover:scale-105 ease-in duration-300"
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} className="text-md" />
+                    </a>
+                  </Tooltip>
                 </td>
               </tr>
             ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination
+        postPerPage={postPerPage}
+        totalPosts={totalPosts}
+        paginate={paginate}
+      />
+
       {isModalOpen && (
         <AddPatient isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       )}

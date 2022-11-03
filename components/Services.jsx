@@ -11,7 +11,7 @@ import {
 
 const Services = () => {
   return (
-    <div id="services" className="bg-white text-balck w-full sm:py-4">
+    <div id="services" className="bg-white text-black w-full sm:py-4">
       <h1 className="text-center text-2xl text-teal-500 font-extrabold font-nunito mb-4 mt-8">
         Ou<span className=" border-b-4 border-teal-500">r Servic</span>es
       </h1>
@@ -20,7 +20,7 @@ const Services = () => {
           Services For Your Health
         </h2>
         <div className="flex flex-col  items-center mt-8 md:flex-row md:space-x-8 ">
-          <div className="p-4 max-w-sm dark:bg-gray-800 rounded-lg border border-gray-200 shadow-lg dark:border-gray-700 mb-8 md:mb-0">
+          <div className="p-4 max-w-sm bg-gray-900 rounded-lg border border-gray-200 shadow-lg dark:border-gray-700 mb-8 md:mb-0">
             <FontAwesomeIcon
               icon={faHeartbeat}
               style={{ fontSize: "50px" }}
@@ -28,7 +28,7 @@ const Services = () => {
             />
 
             <a href="#">
-              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-2 text-2xl font-semibold tracking-tight  text-white">
                 Cardiology
               </h5>
             </a>
@@ -49,14 +49,14 @@ const Services = () => {
             </a>
           </div>
 
-          <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700">
+          <div className="p-4 max-w-sm bg-gray-900 rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700">
             <FontAwesomeIcon
               icon={faSyringe}
               style={{ fontSize: "50px" }}
               className="mb-2 text-teal-600"
             />
             <a href="#">
-              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-white">
                 Opthalmology
               </h5>
             </a>
@@ -79,14 +79,14 @@ const Services = () => {
         </div>
 
         <div className="flex flex-col items-center mt-8 mb-8 md:flex-row md:space-x-8">
-          <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700  mb-8 md:mb-0">
+          <div className="p-4 max-w-sm bg-gray-900 rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700  mb-8 md:mb-0">
             <FontAwesomeIcon
               icon={faStethoscope}
               style={{ fontSize: "50px" }}
               className="mb-2 text-white"
             />
             <a href="#">
-              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-white ">
                 Monthly Check Up
               </h5>
             </a>
@@ -107,14 +107,14 @@ const Services = () => {
             </a>
           </div>
 
-          <div className="p-4  max-w-sm bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700">
+          <div className="p-4  max-w-sm bg-gray-900 rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700">
             <FontAwesomeIcon
               icon={faTeethOpen}
               style={{ fontSize: "50px" }}
               className="mb-2 text-blue-600"
             />
             <a href="#">
-              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-white">
                 Dental Care
               </h5>
             </a>

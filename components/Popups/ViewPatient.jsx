@@ -48,18 +48,18 @@ const ViewPatient = ({ viewData, isOpenViewModal, setIsOpenViewModal }) => {
       }`}
     >
       <div className="w-[400px]">
-        <div className="relative bg-gray-700 text-white rounded-lg shadow p-4">
+        <div className="relative bg-gray-900 text-white rounded-lg shadow p-4">
           <div className="flex flex-row justify-evenly items-center mb-4">
             <h3>Patient Details</h3>
             <button
               onClick={() => setIsOpenViewModal(false)}
               type="button"
-              className=" text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900  text-sm  ml-auto w-[30px] h-[30px] rounded-full flex items-center justify-center dark:hover:bg-gray-800 dark:hover:text-white hover:scale-105 ease-in duration-300"
+              className=" text-gray-400 bg-transparent hover:bg-gray-800 hover:text-gray-900  text-sm  ml-auto w-[30px] h-[30px] rounded-full flex items-center justify-center dark:hover:bg-gray-800 dark:hover:text-white hover:scale-105 ease-in duration-300"
               data-modal-toggle="popup-modal"
             >
               <FontAwesomeIcon
                 icon={faClose}
-                className=" text-2xl text-gray-300"
+                className=" text-2xl text-gray-100"
               />
               <span className="sr-only">Close modal</span>
             </button>

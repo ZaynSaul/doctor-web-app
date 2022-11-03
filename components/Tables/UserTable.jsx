@@ -10,6 +10,7 @@ import Link from "next/link";
 import Delete from "../Popups/Delete";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Tooltip } from "@material-tailwind/react";
 
 const UserTable = ({ userLists }) => {
   const [userData, setUserLists] = useState(userLists);
@@ -121,16 +122,20 @@ const UserTable = ({ userLists }) => {
                 <td className="py-4 px-6">{user.uType}</td>
                 <td className="py-4 px-6 flex justify-start items-center gap-2">
                   <Link href={`/admin/user${user._id}`}>
-                    <a className="font-medium text-blue-600 hover:underline">
-                      <FontAwesomeIcon icon={faEdit} className="text-xl" />
-                    </a>
+                    <Tooltip content="Edit">
+                      <a className="font-medium text-blue-600 hover:underline">
+                        <FontAwesomeIcon icon={faEdit} className="text-xl" />
+                      </a>
+                    </Tooltip>
                   </Link>
-                  <a
-                    onClick={() => handleDelete(user._id)}
-                    className="font-medium cursor-pointer text-red-600 hover:underline"
-                  >
-                    <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
-                  </a>
+                  <Tooltip content="Delete">
+                    <a
+                      onClick={() => handleDelete(user._id)}
+                      className="font-medium cursor-pointer text-red-600 hover:underline"
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
+                    </a>
+                  </Tooltip>
                 </td>
               </tr>
             ))}

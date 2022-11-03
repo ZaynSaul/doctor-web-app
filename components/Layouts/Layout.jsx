@@ -57,7 +57,7 @@ const Layout = ({ title, children }) => {
               showSidebar ? "md:gap-[100px]" : "md:gap-6"
             }`}
           >
-            {/* Sidebar Start */}
+            
             <aside className="sidebar">
               {showSidebar ? (
                 <MainSidebar userType={userType} />

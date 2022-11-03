@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Tooltip } from "@material-tailwind/react";
 
 const EmployeeTable = ({ userLists }) => {
   const [userData, setUserLists] = useState(userLists);
@@ -105,16 +106,20 @@ const EmployeeTable = ({ userLists }) => {
                 <td className="py-4 px-6">{user.uType}</td>
                 <td className="py-4 px-6 flex justify-start items-center gap-2">
                   <Link href={`/admin/employee${user._id}`}>
-                    <a className="font-medium text-blue-600 hover:underline">
-                      <FontAwesomeIcon icon={faEdit} className="text-xl" />
-                    </a>
+                    <Tooltip content="Status">
+                      <a className="font-medium text-blue-600 cursor-pointer hover:underline">
+                        <FontAwesomeIcon icon={faEdit} className="text-xl" />
+                      </a>
+                    </Tooltip>
                   </Link>
-                  <a
-                    onClick={() => handleDelete(user._id)}
-                    className="font-medium cursor-pointer text-red-600 hover:underline"
-                  >
-                    <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
-                  </a>
+                  <Tooltip content="Delete">
+                    <a
+                      onClick={() => handleDelete(user._id)}
+                      className="font-medium cursor-pointer text-red-600 hover:underline"
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
+                    </a>
+                  </Tooltip>
                 </td>
               </tr>
             ))}

@@ -5,8 +5,7 @@ import {
   faUsers,
   faBedPulse,
   faUserMd,
-  faCalendar,
-  faTags,
+  faArrowUp,
   faEye,
   faLineChart,
 } from "@fortawesome/free-solid-svg-icons";
@@ -17,17 +16,19 @@ const Stats = () => {
       <div className="flex flex-col flex-wrap justify-between items-center gap-10 md:flex-row">
         <Card
           bgColor="bg-white"
-          icon={faUsers}
+          icon={faArrowUp}
           bIcon={faEye}
-          text="Users"
-          count="23"
+          text="Out Patients"
+          count="12"
+          link=""
         />
         <Card
           bgColor="bg-white"
           icon={faBedPulse}
           bIcon={faEye}
           text="In Patients"
-          count="8"
+          count="18"
+          link="/admin/patients"
         />
         <Card
           bgColor="bg-white"
@@ -35,13 +36,15 @@ const Stats = () => {
           bIcon={faEye}
           text="Health Workers"
           count="12"
+          link="/admin/employees"
         />
         <Card
           bgColor="bg-white"
           icon={faLineChart}
           bIcon={faEye}
-          text="Recoveries"
+          text="Satisfaction"
           count="84%"
+          link=""
         />
       </div>
     </div>

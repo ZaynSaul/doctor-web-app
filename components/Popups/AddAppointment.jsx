@@ -159,7 +159,7 @@ const Appointment = ({ hideAppointment, setAppointment }) => {
                 <button
                   onClick={() => setAppointment(false)}
                   type="button"
-                  className="text-white bg-red-500 hover:text-red-500 hover:bg-white hover:border hover:border-red-500  rounded-lg text-sm font-medium px-5 py-2.5 "
+                  className="text-white bg-red-500 hover:text-red-500  hover:border hover:border-red-500  rounded-lg text-sm font-medium px-5 py-2.5 "
                 >
                   Cancel
                 </button>

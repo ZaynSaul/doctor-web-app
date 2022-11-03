@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 import {
   faDashboard,
@@ -8,13 +8,30 @@ import {
 import Layout from "../../components/Layouts/Layout";
 import PatientTable from "../../components/Tables/PatientTable";
 import axios from "axios";
+import Pagination from "../../components/Pagination";
 const Patients = ({ patientLists }) => {
+  const [patients, setPatients] = useState(patientLists);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemPerPage, setItemPerPage] = useState(5);
+
+  const indexOfLastPage = currentPage * itemPerPage;
+  const indexOfFirstPage = indexOfLastPage - itemPerPage;
+  const currentData = patients.slice(indexOfFirstPage, indexOfLastPage);
+
+  const paginate = (number) => setCurrentPage(number);
   return (
     <>
       <Layout title="Patients">
         <Breadcrumb icon={faBedPulse} pageName="Patients" />
         <div className="flex flex-col justify-center items-center mt-4">
-          <PatientTable patientLists={patientLists} />
+          <PatientTable
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            paginate={paginate}
+            postPerPage={itemPerPage}
+            totalPosts={patients.length}
+            patientLists={currentData}
+          />
         </div>
       </Layout>
     </>

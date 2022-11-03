@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Drawer from "./Drawer";
+import { Tooltip } from "@material-tailwind/react";
 
 const Nav = ({ showAppointment, setShowAppointment }) => {
   const [showDrawer, setDrawer] = useState(false);
@@ -115,15 +116,17 @@ const Nav = ({ showAppointment, setShowAppointment }) => {
           </Link>
           {session?.user.uType === "user" ? (
             <Link href="/appointment">
-              <a
-                className={` relative font-md ${
-                  color ? "text-white" : "text-teal-500"
-                }`}
-              >
-                <FontAwesomeIcon icon={faCalendar} className="mr-2" />
+              <Tooltip content="View Appointment">
+                <a
+                  className={` relative font-md ${
+                    color ? "text-white" : "text-teal-500"
+                  }`}
+                >
+                  <FontAwesomeIcon icon={faCalendar} className="mr-2" />
 
-                <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-orange-500"></p>
-              </a>
+                  <p className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-orange-500"></p>
+                </a>
+              </Tooltip>
             </Link>
           ) : (
             <button
@@ -181,7 +184,7 @@ const Nav = ({ showAppointment, setShowAppointment }) => {
             </div>
           ) : (
             <Link href="/auth/">
-              <a className="bg-teal-500 px-8  h-10 w-24 text-center flex justify-center items-center rounded-3xl text-white font-bold cursor-pointer hover:bg-teal-100 hover:border border-teal-500 hover:text-teal-500">
+              <a className="bg-teal-500 px-8  h-10 w-24 text-center flex justify-center items-center rounded-3xl text-white font-bold cursor-pointer hover:bg-white hover:border border-teal-500 hover:text-teal-500">
                 <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
                 Login
               </a>

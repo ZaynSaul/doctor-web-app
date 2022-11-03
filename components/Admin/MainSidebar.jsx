@@ -23,7 +23,7 @@ const MainSidebar = ({ userType }) => {
     <>
       <motion.div
         animate={{ width: "200px" }}
-        className="hidden h-[100vh] fixed left-0 top-0 dark:bg-secondary-dark-bg bg-gray-800 md:block "
+        className="hidden h-[100vh] fixed left-0 top-0 dark:bg-secondary-dark-bg bg-gray-900 md:block "
       >
         <div className="flex flex-col  md:overflow-hidden overflow-auto md:hover:overflow-auto">
           <div className="mt-2 ml-4 gap-2 flex ">
@@ -39,8 +39,8 @@ const MainSidebar = ({ userType }) => {
               </div>
               <div className="mt-2 border-b border-white"></div>
               <ul className="flex flex-col">
-                <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
-                  <Link href="/admin">
+                <Link href="/admin">
+                  <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                     <a className="text-white flex items-center ml-4">
                       <FontAwesomeIcon
                         icon={faDashboard}
@@ -48,10 +48,10 @@ const MainSidebar = ({ userType }) => {
                       />
                       <span>Dashboard</span>
                     </a>
-                  </Link>
-                </li>
-                <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
-                  <Link href="/admin/patients">
+                  </li>
+                </Link>
+                <Link href="/admin/patients">
+                  <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                     <a className="text-white flex items-center ml-4">
                       <FontAwesomeIcon
                         icon={faBedPulse}
@@ -59,10 +59,10 @@ const MainSidebar = ({ userType }) => {
                       />
                       <span>Patients</span>
                     </a>
-                  </Link>
-                </li>
-                <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
-                  <Link href="/admin/employees">
+                  </li>
+                </Link>
+                <Link href="/admin/employees">
+                  <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                     <a className="text-white flex items-center ml-4">
                       <FontAwesomeIcon
                         icon={faUserDoctor}
@@ -70,10 +70,10 @@ const MainSidebar = ({ userType }) => {
                       />
                       <span>Employees</span>
                     </a>
-                  </Link>
-                </li>
-                <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
-                  <Link href="/admin/user">
+                  </li>
+                </Link>
+                <Link href="/admin/user">
+                  <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                     <a className="text-white flex items-center ml-4">
                       <FontAwesomeIcon
                         icon={faUserFriends}
@@ -81,16 +81,16 @@ const MainSidebar = ({ userType }) => {
                       />
                       <span>Users</span>
                     </a>
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               </ul>
               <div className="my-4 ml-4">
                 <p className="text-white font-nunito">User Management</p>
               </div>
               <div className=" border-b border-white"></div>
               <ul className="flex flex-col">
-                <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
-                  <Link href="/admin/profile">
+                <Link href="/admin/profile">
+                  <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                     <a className="text-white flex items-center ml-4">
                       <FontAwesomeIcon
                         icon={faUserAlt}
@@ -98,10 +98,10 @@ const MainSidebar = ({ userType }) => {
                       />
                       <span>Profile</span>
                     </a>
-                  </Link>
-                </li>
-                <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
-                  <Link href="/admin">
+                  </li>
+                </Link>
+                <Link href="/admin">
+                  <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                     <a className="text-white flex items-center ml-4">
                       <FontAwesomeIcon
                         icon={faUserCog}
@@ -109,8 +109,8 @@ const MainSidebar = ({ userType }) => {
                       />
                       <span>Permissions</span>
                     </a>
-                  </Link>
-                </li>
+                  </li>
+                </Link>
                 <li className="py-2 cursor-pointer hover:border-r-4 hover:bg-teal-500/10 hover:border-teal-500 hover:transition-opacity">
                   <a className="text-white flex items-center ml-4">
                     <FontAwesomeIcon
@@ -164,7 +164,7 @@ const MainSidebar = ({ userType }) => {
                 </li>
               </ul>
               <div className="my-4 ml-4">
-                <p className="text-white font-nunito">User Management</p>
+                <p className="text-white font-nunito">Settings</p>
               </div>
               <div className=" border-b border-white"></div>
               <ul className="flex flex-col">

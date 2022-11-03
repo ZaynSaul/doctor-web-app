@@ -15,16 +15,16 @@ const Delete = ({ deleteConfirmation, confirm, closePopup }) => {
       }`}
     >
       <div className=" p-2 w-64">
-        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <div className="relative bg-gray-900 rounded-lg shadow">
           <button
             onClick={() => closePopup()}
             type="button"
-            className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900  text-sm  ml-auto w-[30px] h-[30px] rounded-full flex items-center justify-center dark:hover:bg-gray-800 dark:hover:text-white"
+            className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-800 hover:text-gray-900  text-sm  ml-auto w-[30px] h-[30px] rounded-full flex items-center justify-center dark:hover:bg-gray-800 dark:hover:text-white"
             data-modal-toggle="popup-modal"
           >
             <FontAwesomeIcon
               icon={faClose}
-              className=" text-2xl text-gray-300"
+              className=" text-2xl text-gray-100"
             />
             <span className="sr-only">Close modal</span>
           </button>
@@ -42,7 +42,7 @@ const Delete = ({ deleteConfirmation, confirm, closePopup }) => {
             <div className="flex justify-between items-center">
               <button
                 type="button"
-                className="text-white bg-white hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-green-500 dark:text-gray-300 dark:border-green-500 dark:hover:text-white"
+                className="text-white bg-green-500 rounded-lg hover:border hover:border-green-500 hover:bg-transparent text-sm font-medium px-5 py-2.5 hover:text-green-500 focus:z-10 "
                 onClick={() => deleteConfirmation()}
               >
                 Yes
@@ -50,7 +50,7 @@ const Delete = ({ deleteConfirmation, confirm, closePopup }) => {
               <button
                 onClick={() => closePopup()}
                 type="button"
-                className="text-red-500 bg-white  rounded-lg border border-red-500 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-gray-600"
+                className="text-white bg-red-500  rounded-lg hover:border hover:border-red-500 text-sm font-medium px-5 py-2.5  focus:z-10 "
               >
                 No, cancel
               </button>

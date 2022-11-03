@@ -1,19 +1,26 @@
 import React from "react";
 
-const Pagination = ({}) => {
+const Pagination = ({ postPerPage, totalPosts, paginate }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   return (
     <nav
       className="flex justify-between items-center p-4"
       aria-label="Table navigation"
     >
       <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
-        Showing <span className="font-semibold text-gray-500 ">1-10</span> of{" "}
-        <span className="font-semibold text-gray-500 ">100</span>
+        Showing <span className="font-semibold text-gray-500 ">1 </span> of{" "}
+        <span className="font-semibold text-gray-500 ">{totalPosts}</span>
       </span>
       <ul className="inline-flex items-center -space-x-px">
         <li>
           <a
-            href="#"
+            // onClick={() => setCurrentPage(currentPage - 1)}
+            href=""
             className="block py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
           >
             <span className="sr-only">Previous</span>
@@ -32,50 +39,21 @@ const Pagination = ({}) => {
             </svg>
           </a>
         </li>
+        {pageNumbers.map((number) => (
+          <li key={number}>
+            <a
+              onClick={() => paginate(number)}
+              href=""
+              className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
+            >
+              {number}
+            </a>
+          </li>
+        ))}
         <li>
           <a
-            href="#"
-            className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
-          >
-            1
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
-          >
-            2
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            aria-current="page"
-            className="z-10 py-2 px-3 leading-tight text-gray-100 border border-blue-300 hover:bg-white   bg-gray-300 "
-          >
-            3
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
-          >
-            ...
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
-          >
-            100
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
+            // onClick={() => setCurrentPage(currentPage + 1)}
+            href=""
             className="block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700   dark:text-gray-400 "
           >
             <span className="sr-only">Next</span>
